@@ -11,14 +11,12 @@ based decoders and is more flexible in areas such as
 supporting 24-bit PCM output.
 
 
-
 Use and Configuration
 ---------------------
 
 The output format and speaker configuration can be set in
 the configuration panel.  For Foobar, this is generally
 PCM 24 and 2 speaker.
-
 
 
 Compilation
