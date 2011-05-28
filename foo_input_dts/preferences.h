@@ -9,7 +9,7 @@
 
 #define default_cfg_format				0
 #define default_cfg_speakers			2
-#define default_cfg_auto_matrix			0	
+#define default_cfg_auto_matrix			0
 #define default_cfg_normalize_matrix	0
 #define default_cfg_voice_control		0
 #define default_cfg_expand_stereo		0
@@ -66,41 +66,41 @@ extern cfg_int cfg_drc;
 class CMyPreferences : public CDialogImpl<CMyPreferences>, public preferences_page_instance
 {
 public:
-	//Constructor - invoked by preferences_page_impl helpers - don't do Create() in here, preferences_page_impl does this for us
-	CMyPreferences(preferences_page_callback::ptr callback) : m_callback(callback) {}
+    //Constructor - invoked by preferences_page_impl helpers - don't do Create() in here, preferences_page_impl does this for us
+    CMyPreferences(preferences_page_callback::ptr callback) : m_callback(callback) {}
 
-	//Note that we don't bother doing anything regarding destruction of our class.
-	//The host ensures that our dialog is destroyed first, then the last reference to our preferences_page_instance object is released, causing our object to be deleted.
+    //Note that we don't bother doing anything regarding destruction of our class.
+    //The host ensures that our dialog is destroyed first, then the last reference to our preferences_page_instance object is released, causing our object to be deleted.
 
-	//dialog resource ID
-	enum { IDD = IDD_CONFIG };
+    //dialog resource ID
+    enum { IDD = IDD_CONFIG };
 
-	// preferences_page_instance methods (not all of them - get_wnd() is supplied by preferences_page_impl helpers)
-	t_uint32 get_state();
-	void apply();
-	void reset();
+    // preferences_page_instance methods (not all of them - get_wnd() is supplied by preferences_page_impl helpers)
+    t_uint32 get_state();
+    void apply();
+    void reset();
 
-	//WTL message map
-	BEGIN_MSG_MAP(CMyPreferences)
-		MSG_WM_INITDIALOG(OnInitDialog)
-		COMMAND_HANDLER_EX(IDC_FORMAT, CBN_SELCHANGE, OnSelectionChange)
-		COMMAND_HANDLER_EX(IDC_SPEAKERS, CBN_SELCHANGE, OnSelectionChange)
-		COMMAND_HANDLER_EX(IDC_AUTO_MATRIX, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_NORMALIZE_MATRIX, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_VOICE_CONTROL, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_EXPAND_STEREO, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_AUTO_GAIN, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_NORMALIZE, BN_CLICKED, OnButtonClick)
-		COMMAND_HANDLER_EX(IDC_DRC, BN_CLICKED, OnButtonClick)
-	END_MSG_MAP()
+    //WTL message map
+    BEGIN_MSG_MAP(CMyPreferences)
+    MSG_WM_INITDIALOG(OnInitDialog)
+    COMMAND_HANDLER_EX(IDC_FORMAT, CBN_SELCHANGE, OnSelectionChange)
+    COMMAND_HANDLER_EX(IDC_SPEAKERS, CBN_SELCHANGE, OnSelectionChange)
+    COMMAND_HANDLER_EX(IDC_AUTO_MATRIX, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_NORMALIZE_MATRIX, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_VOICE_CONTROL, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_EXPAND_STEREO, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_AUTO_GAIN, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_NORMALIZE, BN_CLICKED, OnButtonClick)
+    COMMAND_HANDLER_EX(IDC_DRC, BN_CLICKED, OnButtonClick)
+    END_MSG_MAP()
 private:
-	BOOL OnInitDialog(CWindow, LPARAM);
-	void OnSelectionChange(UINT, int, CWindow);
-	void OnButtonClick(UINT, int, CWindow);
-	bool HasChanged();
-	void OnChanged();
+    BOOL OnInitDialog(CWindow, LPARAM);
+    void OnSelectionChange(UINT, int, CWindow);
+    void OnButtonClick(UINT, int, CWindow);
+    bool HasChanged();
+    void OnChanged();
 
-	const preferences_page_callback::ptr m_callback;
+    const preferences_page_callback::ptr m_callback;
 };
 
 #endif
