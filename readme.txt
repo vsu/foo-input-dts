@@ -32,4 +32,4 @@ AC3Filter tools library (http://ac3filter.net/wiki/Download_AC3Filter_tools)
   Current version is http://ac3filter.googlecode.com/files/ac3filter_tools_0_31b_src.zip
   Note: Exclude the directshow and directsound source files in the project when compiling
 
-Project and solution files are currently for Visual Studio 2008.
+Project and solution files are currently for Visual Studio 2010.
