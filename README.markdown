@@ -1,4 +1,5 @@
 Foobar2000 DTS decoder plug-in
+==============================
 
 Description
 -----------
@@ -25,6 +26,7 @@ Compilation
 You will need:
 
 Foobar2000 SDK (http://www.foobar2000.org/SDK)
+
 Include files from the Windows Template Library (http://sourceforge.net/projects/wtl/)
 
 AC3Filter tools library (http://ac3filter.net/wiki/Download_AC3Filter_tools)
